@@ -1,7 +1,6 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-// Automatically infer the Props type from Next.js
 export default function AppointmentDetail({
   params,
 }: {
