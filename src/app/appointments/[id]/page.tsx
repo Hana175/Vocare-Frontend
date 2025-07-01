@@ -9,6 +9,8 @@ export default async function AppointmentDetail({
   // Await the params object
   const { id } = await params;
 
+  // Test comment
+
   // Find the appointment using the awaited `id`
   const appointment = appointments.find((a) => a.id === id);
 
