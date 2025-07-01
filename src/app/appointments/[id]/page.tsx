@@ -1,11 +1,13 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-export default function AppointmentDetail({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function AppointmentDetail({ params }: PageProps) {
   const appointment = appointments.find((a) => a.id === params.id);
 
   if (!appointment) return notFound();
