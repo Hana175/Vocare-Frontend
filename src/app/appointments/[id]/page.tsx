@@ -1,9 +1,9 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-type Props = {
-  params: { id: string };
-};
+interface Props {
+  params: { id: string }; // Correctly define the params type
+}
 
 export function generateStaticParams() {
   return appointments.map((appt) => ({
