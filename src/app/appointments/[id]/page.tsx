@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 export default function AppointmentDetail({
   params,
 }: {
-  params: { id: string }; // Define the structure of the dynamic route parameter
+  params: { id: string };
 }) {
   const appointment = appointments.find((a) => a.id === params.id);
 
@@ -23,8 +23,7 @@ export default function AppointmentDetail({
   );
 }
 
-// Generate static paths for pre-rendering
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return appointments.map((appt) => ({
     id: appt.id,
   }));
