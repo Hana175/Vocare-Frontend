@@ -1,7 +1,7 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-export default async function AppointmentDetail({
+export default function AppointmentDetail({
   params,
 }: {
   params: { id: string };
