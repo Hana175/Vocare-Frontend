@@ -1,17 +1,12 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-interface Props {
-  params: { id: string }; // Correctly define the params type
-}
-
-export function generateStaticParams() {
-  return appointments.map((appt) => ({
-    id: appt.id,
-  }));
-}
-
-export default function AppointmentDetail({ params }: Props) {
+// Automatically infer the Props type from Next.js
+export default function AppointmentDetail({
+  params,
+}: {
+  params: { id: string }; // Define the structure of the dynamic route parameter
+}) {
   const appointment = appointments.find((a) => a.id === params.id);
 
   if (!appointment) return notFound();
@@ -27,4 +22,11 @@ export default function AppointmentDetail({ params }: Props) {
       </div>
     </div>
   );
+}
+
+// Generate static paths for pre-rendering
+export function generateStaticParams() {
+  return appointments.map((appt) => ({
+    id: appt.id,
+  }));
 }
