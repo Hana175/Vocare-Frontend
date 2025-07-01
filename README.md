@@ -20,17 +20,82 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# 🗓️ Appointments Frontend
 
-To learn more about Next.js, take a look at the following resources:
+This is the frontend of an appointment calendar application built with **Next.js 14**, **Tailwind CSS**, and **shadcn/ui**. It displays appointments grouped by date, with a responsive interface, filter options, and navigation support.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Features
 
-## Deploy on Vercel
+- 📅 Grouped appointment list by date
+- ✅ "Heute" label shown once at the top (right-aligned)
+- 📆 Date picker and view buttons (Liste, Woche, Monat)
+- ➕ Action buttons: "Neuer Termin" and "Termine filtern"
+- 🧭 Clickable appointment boxes with routing
+- 🎨 Responsive and clean UI using Tailwind and shadcn/ui
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧰 Tech Stack
+
+| Tech                                     | Description                         |
+| ---------------------------------------- | ----------------------------------- |
+| [Next.js](https://nextjs.org/)           | React framework for SSR & routing   |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework         |
+| [shadcn/ui](https://ui.shadcn.com/)      | Styled UI components using Radix UI |
+| [date-fns](https://date-fns.org/)        | Date formatting utilities           |
+| [lucide-react](https://lucide.dev/)      | Icon set for React                  |
+
+---
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/appointments-frontend.git
+cd appointments-frontend
+
+
+### 2. Install dependencies
+
+
+pnpm install
+# or
+npm install
+# or
+yarn
+pnpm dev
+# or
+npm run dev
+
+### 3. Start the development server
+
+pnpm dev
+# or
+npm run dev
+
+---
+
+## To check calendar view
+
+http://localhost:3000/calendar
+
+## To check appointments' list view
+
+http://localhost:3000/list
+
+## To check specific appointment
+http://localhost:3000/appointments/[id]
+
+
+##
+Since the API Key provided is invalid, the data used is dummy data in vocare-calendar-frontend\src\app\lib\data.ts
+
+
+
+
+```
