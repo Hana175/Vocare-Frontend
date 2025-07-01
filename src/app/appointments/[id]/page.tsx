@@ -1,4 +1,4 @@
-import { appointments } from "@/lib/data";
+import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
 export default function AppointmentDetail({
