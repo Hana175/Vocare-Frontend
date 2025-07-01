@@ -1,13 +1,11 @@
-import { appointments } from "../../lib/data";
+import { appointments } from "@/lib/data";
 import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function AppointmentDetail({ params }: PageProps) {
+export default function AppointmentDetail({
+  params,
+}: {
+  params: { id: string };
+}) {
   const appointment = appointments.find((a) => a.id === params.id);
 
   if (!appointment) return notFound();
@@ -25,8 +23,12 @@ export default function AppointmentDetail({ params }: PageProps) {
   );
 }
 
+// ✅ Must be async for static params generation
 export async function generateStaticParams() {
   return appointments.map((appt) => ({
     id: appt.id,
   }));
 }
+
+// ✅ ADD THIS — prevents Vercel from inferring broken types
+export const dynamicParams = true;
