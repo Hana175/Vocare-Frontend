@@ -1,12 +1,16 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-export default function AppointmentDetail({
+export default async function AppointmentDetail({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const appointment = appointments.find((a) => a.id === params.id);
+  // Await the params object
+  const { id } = await params;
+
+  // Find the appointment using the awaited `id`
+  const appointment = appointments.find((a) => a.id === id);
 
   if (!appointment) return notFound();
 
@@ -22,3 +26,13 @@ export default function AppointmentDetail({
     </div>
   );
 }
+
+// Generate static paths for pre-rendering
+export async function generateStaticParams() {
+  return appointments.map((appt) => ({
+    id: appt.id,
+  }));
+}
+
+export const dynamicParams = true;
+export const dynamic = "force-dynamic";
