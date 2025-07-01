@@ -1,7 +1,7 @@
 import { appointments } from "../../lib/data";
 import { notFound } from "next/navigation";
 
-export default function AppointmentDetail({
+export default async function AppointmentDetail({
   params,
 }: {
   params: { id: string };
@@ -22,13 +22,3 @@ export default function AppointmentDetail({
     </div>
   );
 }
-
-// ✅ Must be async for static params generation
-export async function generateStaticParams() {
-  return appointments.map((appt) => ({
-    id: appt.id,
-  }));
-}
-
-// ✅ ADD THIS — prevents Vercel from inferring broken types
-export const dynamicParams = true;
